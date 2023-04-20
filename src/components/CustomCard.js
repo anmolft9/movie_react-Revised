@@ -1,7 +1,7 @@
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 
-export const CustomCard = ({ movie, inSearchForm, func }) => {
+export const CustomCard = ({ movie = {}, inSearchForm, func }) => {
   const { Poster, Title, imdbRating, Director } = movie;
   return (
     <Card style={{ width: "18rem" }} className="mt-3">
@@ -27,7 +27,9 @@ export const CustomCard = ({ movie, inSearchForm, func }) => {
             </Button>
           </div>
         ) : (
-          <Button variant="danger"></Button>
+          <Button onClick={() => func(movie.imdbID)} variant="danger">
+            Delete
+          </Button>
         )}
       </Card.Body>
     </Card>

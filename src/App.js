@@ -24,6 +24,11 @@ function App() {
     setMovie({});
   };
 
+  const handleRemoveItem = (imdbID) => {
+    const filteredMovie = movieList.filter((item) => item.imdbID !== imdbID);
+    setMovieList(filteredMovie);
+  };
+
   return (
     <div className="wrapper">
       <Container>
@@ -44,7 +49,10 @@ function App() {
         <hr />
 
         <div>
-          <MovieList movieList={movieList} />
+          <MovieList
+            movieList={movieList}
+            handleRemoveItem={handleRemoveItem}
+          />
         </div>
       </Container>
     </div>
