@@ -2,6 +2,7 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 
 export const CustomCard = ({ movie = {}, inSearchForm, func }) => {
+  console.log(func);
   const { Poster, Title, imdbRating, Director } = movie;
   return (
     <Card style={{ width: "18rem" }} className="mt-3">
@@ -27,9 +28,11 @@ export const CustomCard = ({ movie = {}, inSearchForm, func }) => {
             </Button>
           </div>
         ) : (
-          <Button onClick={() => func(movie.imdbID)} variant="danger">
-            Delete
-          </Button>
+          <div className="d-grid gap-2">
+            <Button onClick={() => func(movie.imdbID)} variant="danger">
+              Delete
+            </Button>
+          </div>
         )}
       </Card.Body>
     </Card>

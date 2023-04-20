@@ -1,16 +1,12 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
 import { Button, ButtonGroup, Col, Row } from "react-bootstrap";
-import { CustomCard } from "./CustomCard";
-import { CustomList } from "./CustomList";
+import { CustomCard } from "./CustomCard.js";
+import { CustomList } from "./CustomList.js";
 
 export const MovieList = ({ movieList, handleRemoveItem }) => {
-  console.log(movieList);
-
   const [displayList, setDisplayList] = useState([]);
   const [view, setView] = useState("grid");
-
-  console.log(displayList);
 
   useEffect(() => {
     setDisplayList(movieList);
@@ -54,6 +50,7 @@ export const MovieList = ({ movieList, handleRemoveItem }) => {
 
       <Row className="mt-5">
         <Col className="d-flex justify-content-center flex-wrap">
+          hello
           {displayList.map((item, index) => {
             view === "grid" ? (
               <CustomCard key={index} movie={item} func={handleRemoveItem} />
