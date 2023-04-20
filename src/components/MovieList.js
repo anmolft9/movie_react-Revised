@@ -50,14 +50,13 @@ export const MovieList = ({ movieList, handleRemoveItem }) => {
 
       <Row className="mt-5">
         <Col className="d-flex justify-content-center flex-wrap">
-          hello
-          {displayList.map((item, index) => {
+          {displayList.map((item, index) =>
             view === "grid" ? (
               <CustomCard key={index} movie={item} func={handleRemoveItem} />
             ) : (
               <CustomList key={index} movie={item} func={handleRemoveItem} />
-            );
-          })}
+            )
+          )}
         </Col>
       </Row>
     </div>
