@@ -1,10 +1,14 @@
 import React from "react";
+import { Container } from "react-bootstrap";
 import { SearchForm } from "./components/SearchForm";
 
 const App = () => {
   return (
     <div className="wrapper">
-      <SearchForm />
+      <Container>
+        <SearchForm handleOnSubmit={handleOnSubmit} />
+        <hr />
+      </Container>
     </div>
   );
 };
