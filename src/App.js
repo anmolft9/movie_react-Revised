@@ -15,7 +15,9 @@ const App = () => {
       <Container>
         <SearchForm handleOnSubmit={handleOnSubmit} />
         <hr />
-        <CustomCard movie={movie} />
+        <div className="d-flex justify-content-center">
+          {movie.imdbID && <CustomCard movie={movie} />}
+        </div>
       </Container>
     </div>
   );
