@@ -1,8 +1,8 @@
 import React from "react";
 import { Button, Card, Col, Row } from "react-bootstrap";
 
-export const CustomCard = ({ movie }) => {
-  console.log(movie);
+export const CustomCard = ({ movie, func }) => {
+  //   console.log(movie);
   const { Title, Poster, imdbRating, Director } = movie;
   return (
     <Card style={{ width: "18rem" }} className="mt-3 ">
@@ -13,10 +13,20 @@ export const CustomCard = ({ movie }) => {
         <Card.Text>Director: {Director}</Card.Text>
         <Row>
           <Col>
-            <Button variant="primary">Happy</Button>
+            <Button
+              variant="primary"
+              onClick={() => func({ ...movie, mood: "happy" })}
+            >
+              Happy
+            </Button>
           </Col>
           <Col>
-            <Button variant="success">Sad</Button>
+            <Button
+              variant="success"
+              onClick={() => func({ ...movie, mood: "sad" })}
+            >
+              Sad
+            </Button>
           </Col>
         </Row>
       </Card.Body>
